@@ -6,7 +6,7 @@ class Student < ActiveRecord::Base
   validates :email, uniqueness: true, format: { with: /\w+@\w+\.\w{2,}/, message: 'must be valid email' }
   validates :age, numericality: { greater_than: 4 }
   validates :phone, format: { with: /.*\d{3}.*\d{3}.*\d{4}.*/, message: 'must be at least 10 digit phone number' }
-  def name
+  def full_name
     "#{self[:first_name]} #{self[:last_name]}"
   end
 
